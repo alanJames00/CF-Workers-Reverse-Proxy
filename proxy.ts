@@ -6,7 +6,7 @@ export default {
 		const reqUrlHref = url.href;
 		const originAddress = url.origin;
 
-		const targetHost = 'http://68.183.245.189/';
+		const targetHost = 'http://68.183.245.189/'; // Host address of the Target to be Proxied
 
 		// Extract the Paths and params present in the url and parse it into proxyUrl
 		const parsedPath = reqUrlHref.substring(originAddress.length+1);
