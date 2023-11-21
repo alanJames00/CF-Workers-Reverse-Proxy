@@ -8,8 +8,7 @@ export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
 
 		const url = new URL(request.url);
-			
-	
+		
 		return handleProxy.fetch(request, env, ctx);
 	},
 };
