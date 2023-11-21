@@ -2,8 +2,8 @@ export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
 		const url = new URL(request.url);
 
-		const proxyUrl = url.searchParams.get('proxyUrl'); // get a query param value (?proxyUrl=...)
-		const modify = url.searchParams.has('modify'); // check if a query param is set (?proxyUrl=...&modify)
+		const proxyUrl = 'http://68.183.245.189/'; // get a query param value (?proxyUrl=...)
+		const modify = true // check if a query param is set (?proxyUrl=...&modify)
 
 		if (!proxyUrl) {
 			return new Response('Bad request: Missing `proxyUrl` query param', { status: 400 });
