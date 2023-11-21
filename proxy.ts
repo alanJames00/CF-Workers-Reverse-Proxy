@@ -2,22 +2,18 @@ export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
 		const url = new URL(request.url);
 
-		const modify = true // check if a query param is set (?proxyUrl=...&modify)
+		const modify = false // To modify the headers
 		const reqUrlHref = url.href;
 		const originAddress = url.origin;
 
-		
-		
+		const targetHost = 'http://68.183.245.189/';
+
 		// Extract the Paths and params present in the url and parse it into proxyUrl
 		const parsedPath = reqUrlHref.substring(originAddress.length+1);
 		
 
-		const proxyUrl = `http://68.183.245.189/`; // get a query param value (?proxyUrl=...)
+		const proxyUrl = targetHost+parsedPath; // get a query param value (?proxyUrl=...)
 
-
-		if (!proxyUrl) {
-			return new Response('Bad request: Missing `proxyUrl` query param', { status: 400 });
-		}
 
 		// make subrequests with the global `fetch()` function
 		let res = await fetch(proxyUrl, request);
