@@ -1,6 +1,6 @@
 # Cloudflare Workers Reverse Proxy
 
-This project is a fast reverse proxy built using Cloudflare Workers. It allows you to proxy requests from your domain to another backend server.
+Fast and globally-distributed reverse proxy built using Cloudflare Workers. It allows you to proxy requests from your domain to another backend server.
 
 ## Prerequisites
 
